@@ -1,0 +1,10 @@
+{
+  "kind": "synthetic",
+  "seed": 42,
+  "positive_counts": {
+    "landslide": 120,
+    "rockfall": 80,
+    "debris": 50
+  },
+  "background_count": 1200
+}

@@ -1,0 +1,59 @@
+data:
+  id_column: Id
+  label_column: label
+  positive_files:
+    landslide: landslide_positive.csv
+    rockfall: collapse_positive.csv
+    debris: debrisflow_positive.csv
+  background_file: background.csv
+  numerical_columns:
+    - elevation
+    - aspect
+    - plain_curvature
+    - prof_curvature
+    - relief
+    - roughness
+    - slope
+    - fault_dist
+    - river_dist
+    - road_dist
+    - rainfall
+    - spi
+    - twi
+    - steep_rati
+    - dist_tlog
+    - ndvi
+  categorical_columns: [landuse, lil]
+sampling:
+  mode: mixed
+  score_method: centroid
+  beta: 0.3
+  hard_fraction: 0.5
+  random_state: 42
+  shuffle: false
+split:
+  n_splits: 5
+  validation_size: 0.3
+  seed: 10
+model:
+  d_model: 128
+  n_heads: 4
+  n_layers: 2
+  dropout: 0.2
+  dim_feedforward: 2048
+training:
+  lr: 0.0005
+  weight_decay: 1.32626
+  batch_size: 64
+  debris_batch_size: 16
+  max_epochs: 60
+  patience: 20
+  threshold: 0.5
+  loss_weights:
+    landslide: 1.0
+    rockfall: 1.5
+    debris: 1.8
+runtime:
+  device: auto
+  num_threads: 2
+

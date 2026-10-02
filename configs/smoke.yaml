@@ -1,0 +1,12 @@
+extends: default.yaml
+model:
+  d_model: 32
+  n_heads: 4
+  n_layers: 1
+  dim_feedforward: 128
+training:
+  max_epochs: 3
+  patience: 2
+runtime:
+  device: cpu
+
